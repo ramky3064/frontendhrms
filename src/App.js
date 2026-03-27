@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Snackbar, Alert } from "@mui/material";
 import { jwtDecode } from "jwt-decode";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import LoginPage from "./components/loginpage.jsx";
 import ForgotPassword from "./components/forgotpass.jsx";
@@ -111,6 +112,7 @@ function App() {
 
   return (
     <SnackbarContext.Provider value={{ showSnackbar }}>
+      <SpeedInsights />
       <Router>
         <Routes>
           {/* Public Routes */}
